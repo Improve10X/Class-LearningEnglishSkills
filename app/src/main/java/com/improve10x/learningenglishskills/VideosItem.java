@@ -7,5 +7,5 @@ public class VideosItem {
     String channelName;
     String numberOfViewers;
     String logoImageUrl;
-    String uploadedTime;
+    String uploadedDate;
 }

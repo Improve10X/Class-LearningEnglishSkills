@@ -1,24 +1,44 @@
 package com.improve10x.learningenglishskills;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
 public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
+
+    public ArrayList<VideosItem> videosItems;
+
+    void setData(ArrayList<VideosItem> videos) {
+        videosItems = videos;
+    }
     @NonNull
     @Override
     public VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.videos_item, parent, false);
+        VideoViewHolder videoViewHolder = new VideoViewHolder(view);
+        return videoViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
-
+        VideosItem videosItem = videosItems.get(position);
+        Picasso.get().load(videosItem.imageUrl).into(holder.videoImg);
+        Picasso.get().load(videosItem.logoImageUrl).into(holder.logoImg);
+        holder.titleTxt.setText(videosItem.title);
+        holder.channelNameTxt.setText(videosItem.channelName);
+        holder.viewsTxt.setText(videosItem.numberOfViewers);
+        holder.uploadDateTxt.setText(videosItem.uploadedDate);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return videosItems.size();
     }
 }

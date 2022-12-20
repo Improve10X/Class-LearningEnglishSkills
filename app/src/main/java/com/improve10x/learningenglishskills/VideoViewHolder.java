@@ -13,7 +13,7 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
 
     ImageView videoImg;
     ImageButton deleteImgBtn;
-    ImageButton logoImgBtn;
+    ImageView logoImg;
     EditText titleTxt;
     TextView channelNameTxt;
     TextView viewsTxt;
@@ -23,7 +23,7 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         videoImg = itemView.findViewById(R.id.video_img);
         deleteImgBtn = itemView.findViewById(R.id.delete_img_btn);
-        logoImgBtn = itemView.findViewById(R.id.logo_img_btn);
+        logoImg = itemView.findViewById(R.id.logo_img);
         titleTxt = itemView.findViewById(R.id.title_txt);
         channelNameTxt = itemView.findViewById(R.id.channel_name_txt);
         viewsTxt = itemView.findViewById(R.id.views_txt);
