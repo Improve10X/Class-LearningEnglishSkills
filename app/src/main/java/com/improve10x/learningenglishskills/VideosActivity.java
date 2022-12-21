@@ -42,14 +42,12 @@ public class VideosActivity extends AppCompatActivity {
     private void setupData() {
         videosItems = new ArrayList<>();
         VideosItem video = new VideosItem();
-        video.imageUrl = "https://i.ytimg.com/an_webp/dzxpUiwDZS0/mqdefault_6s.webp?du=3000&sqp=CIyQh50G&rs=AOn4CLC8ccV8xyhVqagYCFYfLweYToCuPw";
+        video.imageUrl = "https://i.ytimg.com/vi/bUG2M8MD7_Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7maV5l_yR6tGbuQxHOJoeQE1Q3A";
         video.logoImageUrl = "https://yt3.ggpht.com/ytc/AMLnZu_lmrsZYsl7NvS4PbztGPON3C236wLivT6bICl7vw=s68-c-k-c0x00ffffff-no-rj";
-        video.title = "Kung fu panda";
-        video.channelName = "Pullaiah";
+        video.title = "Kung fu panda bnvhgjhjukgy,guhkugyjgg,jyyjhgj,ygyjgjh,gyghjgtyjhtyyytyukt,tyr";
+        video.channelName = "Pullaiah tftftyfyyututgyutituititutytyut";
         video.numberOfViewers = "10M views";
         video.uploadedDate =  "10Months ago";
         videosItems.add(video);
-
     }
-
 }

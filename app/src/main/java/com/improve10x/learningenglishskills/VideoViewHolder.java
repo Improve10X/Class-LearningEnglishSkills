@@ -14,7 +14,7 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
     ImageView videoImg;
     ImageButton deleteImgBtn;
     ImageView logoImg;
-    EditText titleTxt;
+    TextView titleTxt;
     TextView channelNameTxt;
     TextView viewsTxt;
     TextView uploadDateTxt;
