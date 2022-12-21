@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.improve10x.learningenglishskills.api.VideosService;
@@ -17,9 +19,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class VideosActivity extends BaseActivity {
-    private ArrayList<VideosItem> videosItems =  new  ArrayList();
+
+    private ArrayList<VideosItem> videosItems = new ArrayList();
     private RecyclerView videosRv;
     private VideosAdapter videosAdapter;
+    private Button addBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +34,16 @@ public class VideosActivity extends BaseActivity {
         //setupData();
         setupAdapter();
         setupVideosRv();
+        handleAddBtn();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         fetchVideos();
     }
 
-    private void fetchVideos(){
+    private void fetchVideos() {
         Call<List<VideosItem>> call = videosService.fetchVideos();
         call.enqueue(new Callback<List<VideosItem>>() {
             @Override
@@ -50,6 +60,13 @@ public class VideosActivity extends BaseActivity {
         });
     }
 
+    private void handleAddBtn() {
+        addBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this,BaseAddEditVideosActivity.class);
+            startActivity(intent);
+        });
+    }
+
     private void setupAdapter() {
         videosAdapter = new VideosAdapter();
         videosAdapter.setData(videosItems);
@@ -63,6 +80,7 @@ public class VideosActivity extends BaseActivity {
 
     private void setupViews() {
         videosRv = findViewById(R.id.videos_rv);
+        addBtn = findViewById(R.id.add_btn);
     }
 
    // private void setupData() {
