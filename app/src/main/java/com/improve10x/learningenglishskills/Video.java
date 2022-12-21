@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class VideosItem implements Serializable {
+public class Video implements Serializable {
     @SerializedName("_id")
     String id;
     String imageUrl;

@@ -9,17 +9,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
-    public List<VideosItem> videosItems;
+    public List<Video> videos;
+    public OnItemActionListener onItemActionListener;
 
-    void setData(List<VideosItem> videos) {
-        videosItems = videos;
+    void setOnItemActionListener(OnItemActionListener listener) {
+        onItemActionListener = listener;
+    }
+
+    void setData(List<Video> videos) {
+        this.videos = videos;
         notifyDataSetChanged();
     }
+
     @NonNull
     @Override
     public VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,17 +35,23 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
-        VideosItem videosItem = videosItems.get(position);
-        Picasso.get().load(videosItem.imageUrl).into(holder.videoImg);
-        Picasso.get().load(videosItem.logoImageUrl).into(holder.logoImg);
-        holder.titleTxt.setText(videosItem.title);
-        holder.channelNameTxt.setText(videosItem.channelName);
-        holder.viewsTxt.setText(videosItem.numberOfViews);
-        holder.uploadDateTxt.setText(videosItem.uploadedDate);
+        Video video = videos.get(position);
+        Picasso.get().load(video.imageUrl).into(holder.videoImg);
+        Picasso.get().load(video.logoImageUrl).into(holder.logoImg);
+        holder.titleTxt.setText(video.title);
+        holder.channelNameTxt.setText(video.channelName);
+        holder.viewsTxt.setText(video.numberOfViews);
+        holder.uploadDateTxt.setText(video.uploadedDate);
+        holder.deleteImgBtn.setOnClickListener(view -> {
+            onItemActionListener.onItemDelete(video);
+        });
+        holder.itemView.setOnClickListener(view -> {
+            onItemActionListener.onItemClicked(video);
+        });
     }
 
     @Override
     public int getItemCount() {
-        return videosItems.size();
+        return videos.size();
     }
 }

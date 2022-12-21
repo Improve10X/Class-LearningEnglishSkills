@@ -11,7 +11,7 @@ import retrofit2.Response;
 
 public class BaseAddEditVideosActivity extends BaseActivity {
 
-    protected VideosItem videosItem;
+    protected Video videosItem;
     protected EditText imageUrlTxt;
     protected EditText titleTxt;
     protected EditText channelLogoTxt;
@@ -36,30 +36,30 @@ public class BaseAddEditVideosActivity extends BaseActivity {
             String channelName = channelLogoTxt.getText().toString();
             String views = numberOfViewsTxt.getText().toString();
             String uploadDate = uploadedDateTxt.getText().toString();
-            VideosItem videosItem = createVideo(imageUrl, title,logoImg, channelName, views, uploadDate);
+            Video videosItem = createVideo(imageUrl, title,logoImg, channelName, views, uploadDate);
             saveVideo(videosItem);
         });
     }
 
-    private void saveVideo(VideosItem videosItem) {
-        Call<VideosItem> call = videosService.createVideo(videosItem);
-        call.enqueue(new Callback<VideosItem>() {
+    private void saveVideo(Video videosItem) {
+        Call<Video> call = videosService.createVideo(videosItem);
+        call.enqueue(new Callback<Video>() {
             @Override
-            public void onResponse(Call<VideosItem> call, Response<VideosItem> response) {
+            public void onResponse(Call<Video> call, Response<Video> response) {
                 Toast.makeText(BaseAddEditVideosActivity.this, "Successfully added video", Toast.LENGTH_SHORT).show();
                 finish();
             }
 
             @Override
-            public void onFailure(Call<VideosItem> call, Throwable t) {
+            public void onFailure(Call<Video> call, Throwable t) {
                 Toast.makeText(BaseAddEditVideosActivity.this, "Failed to add video", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
 
-    protected VideosItem createVideo(String imageUrl, String title, String logoImageUrl, String channelName, String numberOfViews, String uploadedDate) {
-        VideosItem videosItem = new VideosItem();
+    protected Video createVideo(String imageUrl, String title, String logoImageUrl, String channelName, String numberOfViews, String uploadedDate) {
+        Video videosItem = new Video();
         videosItem.imageUrl = imageUrl;
         videosItem.title = title;
         videosItem.logoImageUrl = logoImageUrl;
