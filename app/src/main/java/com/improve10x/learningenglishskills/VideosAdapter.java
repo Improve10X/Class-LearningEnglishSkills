@@ -10,13 +10,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
-    public ArrayList<VideosItem> videosItems;
+    public List<VideosItem> videosItems;
 
-    void setData(ArrayList<VideosItem> videos) {
+    void setData(List<VideosItem> videos) {
         videosItems = videos;
+        notifyDataSetChanged();
     }
     @NonNull
     @Override
@@ -33,7 +35,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
         Picasso.get().load(videosItem.logoImageUrl).into(holder.logoImg);
         holder.titleTxt.setText(videosItem.title);
         holder.channelNameTxt.setText(videosItem.channelName);
-        holder.viewsTxt.setText(videosItem.numberOfViewers);
+        holder.viewsTxt.setText(videosItem.numberOfViews);
         holder.uploadDateTxt.setText(videosItem.uploadedDate);
     }
 

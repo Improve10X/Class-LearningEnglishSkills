@@ -1,11 +1,16 @@
 package com.improve10x.learningenglishskills;
 
-public class VideosItem {
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
+public class VideosItem implements Serializable {
+    @SerializedName("_id")
     String id;
     String imageUrl;
     String title;
     String channelName;
-    String numberOfViewers;
+    String numberOfViews;
     String logoImageUrl;
     String uploadedDate;
 }
