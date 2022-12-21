@@ -21,7 +21,6 @@ public class VideosActivity extends BaseActivity {
     private RecyclerView videosRv;
     private VideosAdapter videosAdapter;
     private Button addBtn;
-    private Video video;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +59,7 @@ public class VideosActivity extends BaseActivity {
 
     private void handleAddBtn() {
         addBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this,BaseAddEditVideosActivity.class);
+            Intent intent = new Intent(this,AddVideosActivity.class);
             startActivity(intent);
         });
     }
@@ -72,6 +71,9 @@ public class VideosActivity extends BaseActivity {
             @Override
             public void onItemClicked(Video video) {
                 Toast.makeText(VideosActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(VideosActivity.this,EditVideoActivity.class);
+                intent.putExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS,video);
+                startActivity(intent);
             }
 
             @Override
@@ -84,7 +86,6 @@ public class VideosActivity extends BaseActivity {
             @Override
             public void onItemEdit(Video video) {
                 Toast.makeText(VideosActivity.this, "Edit", Toast.LENGTH_SHORT).show();
-
             }
         });
         videosRv.setAdapter(videosAdapter);
