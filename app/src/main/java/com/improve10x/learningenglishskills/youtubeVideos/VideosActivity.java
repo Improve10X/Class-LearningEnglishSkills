@@ -1,4 +1,4 @@
-package com.improve10x.learningenglishskills;
+package com.improve10x.learningenglishskills.youtubeVideos;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.improve10x.learningenglishskills.BaseActivity;
+import com.improve10x.learningenglishskills.Constants;
+import com.improve10x.learningenglishskills.OnItemActionListener;
+import com.improve10x.learningenglishskills.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +63,7 @@ public class VideosActivity extends BaseActivity {
 
     private void handleAddBtn() {
         addBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this,AddVideosActivity.class);
+            Intent intent = new Intent(this, AddVideosActivity.class);
             startActivity(intent);
         });
     }
@@ -70,7 +75,7 @@ public class VideosActivity extends BaseActivity {
             @Override
             public void onItemClicked(Video video) {
                 Toast.makeText(VideosActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(VideosActivity.this,PlayVideoActivity.class);
+                Intent intent = new Intent(VideosActivity.this, PlayVideoActivity.class);
                 intent.putExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS,video);
                 startActivity(intent);
             }
@@ -85,7 +90,7 @@ public class VideosActivity extends BaseActivity {
             @Override
             public void onItemEdit(Video video) {
                 Toast.makeText(VideosActivity.this, "Edit", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(VideosActivity.this,EditVideoActivity.class);
+                Intent intent = new Intent(VideosActivity.this, EditVideoActivity.class);
                 intent.putExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS,video);
                 startActivity(intent);
             }

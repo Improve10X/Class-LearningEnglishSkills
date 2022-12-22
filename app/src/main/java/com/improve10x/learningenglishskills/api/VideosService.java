@@ -1,7 +1,7 @@
 package com.improve10x.learningenglishskills.api;
 
 import com.improve10x.learningenglishskills.Constants;
-import com.improve10x.learningenglishskills.Video;
+import com.improve10x.learningenglishskills.youtubeVideos.Video;
 
 import java.util.List;
 

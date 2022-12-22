@@ -1,4 +1,4 @@
-package com.improve10x.learningenglishskills;
+package com.improve10x.learningenglishskills.youtubeVideos;
 
 import android.view.View;
 import android.widget.EditText;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.improve10x.learningenglishskills.R;
 
 public class VideoViewHolder extends RecyclerView.ViewHolder {
 

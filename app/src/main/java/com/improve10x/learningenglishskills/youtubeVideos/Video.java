@@ -1,4 +1,4 @@
-package com.improve10x.learningenglishskills;
+package com.improve10x.learningenglishskills.youtubeVideos;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -13,4 +13,5 @@ public class Video implements Serializable {
     String numberOfViews;
     String logoImageUrl;
     String uploadedDate;
+    String youTubeId;
 }

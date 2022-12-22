@@ -1,4 +1,4 @@
-package com.improve10x.learningenglishskills;
+package com.improve10x.learningenglishskills.youtubeVideos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,14 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.improve10x.learningenglishskills.Constants;
+import com.improve10x.learningenglishskills.R;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EditVideoActivity extends BaseAddEditVideosActivity{
+public class EditVideoActivity extends BaseAddEditVideosActivity {
     private Video video;
     Button editBtn;
 

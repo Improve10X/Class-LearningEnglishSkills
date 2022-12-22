@@ -1,14 +1,10 @@
-package com.improve10x.learningenglishskills;
+package com.improve10x.learningenglishskills.youtubeVideos;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.improve10x.learningenglishskills.BaseActivity;
+import com.improve10x.learningenglishskills.R;
 
 public class BaseAddEditVideosActivity extends BaseActivity {
 
