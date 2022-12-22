@@ -14,6 +14,7 @@ public class BaseAddEditVideosActivity extends BaseActivity {
     protected EditText logoImgUrlTxt;
     protected EditText numberOfViewsTxt;
     protected EditText uploadedDateTxt;
+    protected EditText youtubeVideoIdTxt;
 
 
     @Override
@@ -23,7 +24,7 @@ public class BaseAddEditVideosActivity extends BaseActivity {
         setupViews();
     }
 
-    protected Video createVideo(String imageUrl, String title, String logoImageUrl, String channelName, String numberOfViews, String uploadedDate) {
+    protected Video createVideo(String imageUrl, String title, String logoImageUrl, String channelName, String numberOfViews, String uploadedDate, String youtubeVideoId) {
         Video videosItem = new Video();
         videosItem.imageUrl = imageUrl;
         videosItem.title = title;
@@ -31,6 +32,7 @@ public class BaseAddEditVideosActivity extends BaseActivity {
         videosItem.channelName = channelName;
         videosItem.numberOfViews = numberOfViews;
         videosItem.uploadedDate = uploadedDate;
+        videosItem.youtubeVideoId = youtubeVideoId;
         return videosItem;
     }
 
@@ -41,5 +43,6 @@ public class BaseAddEditVideosActivity extends BaseActivity {
         logoImgUrlTxt = findViewById(R.id.logo_img_url_txt);
         numberOfViewsTxt = findViewById(R.id.number_of_views_txt);
         uploadedDateTxt = findViewById(R.id.upload_date_txt);
+        youtubeVideoIdTxt = findViewById(R.id.youtube_video_id_txt);
     }
 }
