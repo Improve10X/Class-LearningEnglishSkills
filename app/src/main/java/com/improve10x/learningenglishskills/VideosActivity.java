@@ -86,6 +86,9 @@ public class VideosActivity extends BaseActivity {
             @Override
             public void onItemEdit(Video video) {
                 Toast.makeText(VideosActivity.this, "Edit", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(VideosActivity.this,EditVideoActivity.class);
+                intent.putExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS,video);
+                startActivity(intent);
             }
         });
         videosRv.setAdapter(videosAdapter);

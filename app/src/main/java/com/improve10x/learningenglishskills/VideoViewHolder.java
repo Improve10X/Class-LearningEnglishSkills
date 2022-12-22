@@ -18,6 +18,7 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
     TextView channelNameTxt;
     TextView viewsTxt;
     TextView uploadDateTxt;
+    ImageButton editImgBtn;
 
     public VideoViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -28,5 +29,6 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
         channelNameTxt = itemView.findViewById(R.id.channel_name_txt);
         viewsTxt = itemView.findViewById(R.id.views_txt);
         uploadDateTxt = itemView.findViewById(R.id.upload_date_txt);
+        editImgBtn = itemView.findViewById(R.id.edit_img_btn);
     }
 }

@@ -68,7 +68,6 @@ public class EditVideoActivity extends BaseAddEditVideosActivity{
         logoImgUrlTxt.setText(video.logoImageUrl);
         numberOfViewsTxt.setText(video.numberOfViews);
         uploadedDateTxt.setText(video.uploadedDate);
-
     }
 
     private void setupViews() {
