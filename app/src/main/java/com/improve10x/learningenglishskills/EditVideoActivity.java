@@ -21,11 +21,13 @@ public class EditVideoActivity extends BaseAddEditVideosActivity{
         super.onCreate(savedInstanceState);
         setupViews();
         Intent intent = getIntent();
-        getSupportActionBar().setTitle("Edit Video");
-        video = (Video)  intent.getSerializableExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS);
-        showData();
-        handleEdit();
-        handleEditBtn();
+        if (intent.hasExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS)) {
+            getSupportActionBar().setTitle("Edit Video");
+            video = (Video)  intent.getSerializableExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS);
+            showData();
+            handleEdit();
+            handleEditBtn();
+        }
     }
 
     private void handleEdit() {

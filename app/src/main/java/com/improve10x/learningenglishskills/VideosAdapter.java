@@ -13,7 +13,7 @@ import java.util.List;
 
 public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
-    public List<Video> videos;
+    public List<Video> videoList;
     public OnItemActionListener onItemActionListener;
 
     void setOnItemActionListener(OnItemActionListener listener) {
@@ -21,7 +21,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     }
 
     void setData(List<Video> videos) {
-        this.videos = videos;
+        this.videoList = videos;
         notifyDataSetChanged();
     }
 
@@ -35,7 +35,7 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
-        Video video = videos.get(position);
+        Video video = videoList.get(position);
         Picasso.get().load(video.imageUrl).into(holder.videoImg);
         Picasso.get().load(video.logoImageUrl).into(holder.logoImg);
         holder.titleTxt.setText(video.title);
@@ -55,6 +55,6 @@ public class VideosAdapter extends RecyclerView.Adapter<VideoViewHolder> {
 
     @Override
     public int getItemCount() {
-        return videos.size();
+        return videoList.size();
     }
 }

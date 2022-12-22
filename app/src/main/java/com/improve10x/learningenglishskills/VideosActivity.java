@@ -28,7 +28,6 @@ public class VideosActivity extends BaseActivity {
         setContentView(R.layout.activity_videos);
         getSupportActionBar().setTitle("YouTube");
         setupViews();
-        //setupData();
         setupAdapter();
         setupVideosRv();
         handleAddBtn();
@@ -71,7 +70,7 @@ public class VideosActivity extends BaseActivity {
             @Override
             public void onItemClicked(Video video) {
                 Toast.makeText(VideosActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(VideosActivity.this,EditVideoActivity.class);
+                Intent intent = new Intent(VideosActivity.this,PlayVideoActivity.class);
                 intent.putExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS,video);
                 startActivity(intent);
             }
@@ -120,9 +119,4 @@ public class VideosActivity extends BaseActivity {
         videosRv = findViewById(R.id.videos_rv);
         addBtn = findViewById(R.id.add_btn);
     }
-
-   // private void setupData() {
-       // videosItems = new ArrayList<>();
-
-   // }
 }
