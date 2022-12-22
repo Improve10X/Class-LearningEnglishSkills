@@ -10,7 +10,6 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
-import com.improve10x.learningenglishskills.BaseActivity;
 import com.improve10x.learningenglishskills.Constants;
 import com.improve10x.learningenglishskills.R;
 import com.squareup.picasso.Picasso;
@@ -41,7 +40,7 @@ public class PlayVideoActivity extends YouTubeBaseActivity {
         youTubePlayerView.initialize(Constants.YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo(video.youTubeId);
+                youTubePlayer.loadVideo(video.youtubeVideoId);
                 youTubePlayer.play();
             }
 

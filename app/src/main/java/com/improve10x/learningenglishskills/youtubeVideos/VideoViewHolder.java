@@ -13,6 +13,7 @@ import com.improve10x.learningenglishskills.R;
 
 public class VideoViewHolder extends RecyclerView.ViewHolder {
 
+
     ImageView videoImg;
     ImageButton deleteImgBtn;
     ImageView logoImg;
@@ -24,6 +25,7 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
 
     public VideoViewHolder(@NonNull View itemView) {
         super(itemView);
+        videoImg = itemView.findViewById(R.id.video_img);
         deleteImgBtn = itemView.findViewById(R.id.delete_img_btn);
         logoImg = itemView.findViewById(R.id.logo_img);
         titleTxt = itemView.findViewById(R.id.title_txt);

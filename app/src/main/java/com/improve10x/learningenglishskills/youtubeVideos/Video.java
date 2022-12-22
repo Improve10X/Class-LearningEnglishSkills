@@ -13,5 +13,5 @@ public class Video implements Serializable {
     String numberOfViews;
     String logoImageUrl;
     String uploadedDate;
-    String youTubeId;
+    String youtubeVideoId;
 }
