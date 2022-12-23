@@ -41,7 +41,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".youtubeVideos.AddVideosActivity"
+            android:name=".youtubeVideos.AddVideoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

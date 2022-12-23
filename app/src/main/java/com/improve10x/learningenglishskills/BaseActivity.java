@@ -17,7 +17,7 @@ public class BaseActivity extends AppCompatActivity {
         setApiService();
     }
 
-    private void setApiService(){
+    private void setApiService() {
         VideosApi videosApi = new VideosApi();
         videosService = videosApi.createVideosService();
     }

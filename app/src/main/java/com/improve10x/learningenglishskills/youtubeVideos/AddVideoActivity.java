@@ -2,18 +2,15 @@ package com.improve10x.learningenglishskills.youtubeVideos;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-
-import com.improve10x.learningenglishskills.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddVideosActivity extends BaseAddEditVideosActivity {
+public class AddVideoActivity extends BaseAddEditVideosActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,7 +18,6 @@ public class AddVideosActivity extends BaseAddEditVideosActivity {
         getSupportActionBar().setTitle("Add Video");
         handleAdd();
         handleAddBtn();
-
     }
 
     private void handleAdd() {
@@ -47,13 +43,13 @@ public class AddVideosActivity extends BaseAddEditVideosActivity {
         call.enqueue(new Callback<Video>() {
             @Override
             public void onResponse(Call<Video> call, Response<Video> response) {
-                Toast.makeText(AddVideosActivity.this, "Successfully added video", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddVideoActivity.this, "Successfully added video", Toast.LENGTH_SHORT).show();
                 finish();
             }
 
             @Override
             public void onFailure(Call<Video> call, Throwable t) {
-                Toast.makeText(AddVideosActivity.this, "Failed to add video", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddVideoActivity.this, "Failed to add video", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -26,7 +26,7 @@ public class EditVideoActivity extends BaseAddEditVideosActivity {
         Intent intent = getIntent();
         if (intent.hasExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS)) {
             getSupportActionBar().setTitle("Edit Video");
-            video = (Video)  intent.getSerializableExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS);
+            video = (Video) intent.getSerializableExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS);
             showData();
             handleEdit();
             handleEditBtn();
@@ -42,13 +42,13 @@ public class EditVideoActivity extends BaseAddEditVideosActivity {
             String views = binding.numberOfViewsTxt.getText().toString();
             String uploadDate = binding.uploadDateTxt.getText().toString();
             String youtubeVideoId = binding.youtubeVideoIdTxt.getText().toString();
-            Video updatedVideo = createVideo(imageUrl, title,logoImg, channelName, views, uploadDate, youtubeVideoId);
+            Video updatedVideo = createVideo(imageUrl, title, logoImg, channelName, views, uploadDate, youtubeVideoId);
             updateVideo(video.id, updatedVideo);
         });
     }
 
     private void updateVideo(String id, Video updatedVideo) {
-        Call<Void> call = videosService.updateVideo(id,updatedVideo);
+        Call<Void> call = videosService.updateVideo(id, updatedVideo);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {

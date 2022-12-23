@@ -1,18 +1,14 @@
 package com.improve10x.learningenglishskills.youtubeVideos;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.improve10x.learningenglishskills.BaseActivity;
 import com.improve10x.learningenglishskills.Constants;
 import com.improve10x.learningenglishskills.OnItemActionListener;
-import com.improve10x.learningenglishskills.R;
 import com.improve10x.learningenglishskills.databinding.ActivityVideosBinding;
 
 import java.util.ArrayList;
@@ -24,7 +20,7 @@ import retrofit2.Response;
 
 public class VideosActivity extends BaseActivity {
 
-    private ArrayList<Video> videosItems = new ArrayList();
+    private ArrayList<Video> videoItems = new ArrayList();
     private ActivityVideosBinding binding;
     private VideosAdapter videosAdapter;
 
@@ -57,21 +53,20 @@ public class VideosActivity extends BaseActivity {
             @Override
             public void onFailure(Call<List<Video>> call, Throwable t) {
                 Toast.makeText(VideosActivity.this, "Failed to fetch Videos", Toast.LENGTH_SHORT).show();
-
             }
         });
     }
 
     private void handleAddBtn() {
         binding.addBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this, AddVideosActivity.class);
+            Intent intent = new Intent(this, AddVideoActivity.class);
             startActivity(intent);
         });
     }
 
     private void setupAdapter() {
         videosAdapter = new VideosAdapter();
-        videosAdapter.setData(videosItems);
+        videosAdapter.setData(videoItems);
         videosAdapter.setOnItemActionListener(new OnItemActionListener() {
             @Override
             public void onItemClicked(Video video) {
@@ -85,7 +80,6 @@ public class VideosActivity extends BaseActivity {
             public void onItemDelete(Video video) {
                 onDelete(video);
                 Toast.makeText(VideosActivity.this, "Successfully deleted video", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -97,7 +91,6 @@ public class VideosActivity extends BaseActivity {
             }
         });
         binding.videosRv.setAdapter(videosAdapter);
-
     }
 
     private void setupVideosRv() {
@@ -116,7 +109,6 @@ public class VideosActivity extends BaseActivity {
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(VideosActivity.this, "Failed to delete video", Toast.LENGTH_SHORT).show();
-
             }
         });
     }

@@ -13,6 +13,7 @@ import com.improve10x.learningenglishskills.R;
 import com.improve10x.learningenglishskills.databinding.VideosItemBinding;
 
 public class VideoViewHolder extends RecyclerView.ViewHolder {
+
     VideosItemBinding binding;
 
     public VideoViewHolder(VideosItemBinding videosItemBinding) {
