@@ -6,12 +6,12 @@ import java.io.Serializable;
 
 public class Video implements Serializable {
     @SerializedName("_id")
-    String id;
-    String imageUrl;
-    String title;
-    String channelName;
-    String numberOfViews;
-    String logoImageUrl;
-    String uploadedDate;
-    String youtubeVideoId;
+    public String id;
+    public String imageUrl;
+    public String title;
+    public String channelName;
+    public String numberOfViews;
+    public String logoImageUrl;
+    public String uploadedDate;
+    public String youtubeVideoId;
 }
