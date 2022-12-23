@@ -10,28 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.improve10x.learningenglishskills.R;
+import com.improve10x.learningenglishskills.databinding.VideosItemBinding;
 
 public class VideoViewHolder extends RecyclerView.ViewHolder {
+    VideosItemBinding binding;
 
-
-    ImageView videoImg;
-    ImageButton deleteImgBtn;
-    ImageView logoImg;
-    TextView titleTxt;
-    TextView channelNameTxt;
-    TextView viewsTxt;
-    TextView uploadDateTxt;
-    ImageButton editImgBtn;
-
-    public VideoViewHolder(@NonNull View itemView) {
-        super(itemView);
-        videoImg = itemView.findViewById(R.id.video_img);
-        deleteImgBtn = itemView.findViewById(R.id.delete_img_btn);
-        logoImg = itemView.findViewById(R.id.logo_img);
-        titleTxt = itemView.findViewById(R.id.title_txt);
-        channelNameTxt = itemView.findViewById(R.id.channel_name_txt);
-        viewsTxt = itemView.findViewById(R.id.views_txt);
-        uploadDateTxt = itemView.findViewById(R.id.upload_date_txt);
-        editImgBtn = itemView.findViewById(R.id.edit_img_btn);
+    public VideoViewHolder(VideosItemBinding videosItemBinding) {
+        super(videosItemBinding.getRoot());
+        binding = videosItemBinding;
     }
 }
