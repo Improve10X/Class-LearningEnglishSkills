@@ -10,19 +10,19 @@ import androidx.annotation.Nullable;
 
 import com.improve10x.learningenglishskills.Constants;
 import com.improve10x.learningenglishskills.R;
+import com.improve10x.learningenglishskills.databinding.ActivityBaseAddEditVideosBinding;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EditVideoActivity extends BaseAddEditVideosActivity {
+
     private Video video;
-    Button editBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setupViews();
         Intent intent = getIntent();
         if (intent.hasExtra(Constants.KEY_LEARNING_ENGLISH_SKILLS)) {
             getSupportActionBar().setTitle("Edit Video");
@@ -34,14 +34,14 @@ public class EditVideoActivity extends BaseAddEditVideosActivity {
     }
 
     private void handleEdit() {
-        editBtn.setOnClickListener(view -> {
-            String imageUrl = imageUrlTxt.getText().toString();
-            String title = titleTxt.getText().toString();
-            String logoImg = logoImgUrlTxt.getText().toString();
-            String channelName = channelLogoTxt.getText().toString();
-            String views = numberOfViewsTxt.getText().toString();
-            String uploadDate = uploadedDateTxt.getText().toString();
-            String youtubeVideoId = youtubeVideoIdTxt.getText().toString();
+        binding.editBtn.setOnClickListener(view -> {
+            String imageUrl = binding.imageUrlTxt.getText().toString();
+            String title = binding.titleTxt.getText().toString();
+            String logoImg = binding.logoImgUrlTxt.getText().toString();
+            String channelName = binding.channelNameTxt.getText().toString();
+            String views = binding.numberOfViewsTxt.getText().toString();
+            String uploadDate = binding.uploadDateTxt.getText().toString();
+            String youtubeVideoId = binding.youtubeVideoIdTxt.getText().toString();
             Video updatedVideo = createVideo(imageUrl, title,logoImg, channelName, views, uploadDate, youtubeVideoId);
             updateVideo(video.id, updatedVideo);
         });
@@ -64,20 +64,16 @@ public class EditVideoActivity extends BaseAddEditVideosActivity {
     }
 
     private void handleEditBtn() {
-        editBtn.setVisibility(View.VISIBLE);
+        binding.editBtn.setVisibility(View.VISIBLE);
     }
 
     private void showData() {
-        imageUrlTxt.setText(video.imageUrl);
-        titleTxt.setText(video.title);
-        channelLogoTxt.setText(video.channelName);
-        logoImgUrlTxt.setText(video.logoImageUrl);
-        numberOfViewsTxt.setText(video.numberOfViews);
-        uploadedDateTxt.setText(video.uploadedDate);
-        youtubeVideoIdTxt.setText(video.youtubeVideoId);
-    }
-
-    private void setupViews() {
-        editBtn = findViewById(R.id.edit_btn);
+        binding.imageUrlTxt.setText(video.imageUrl);
+        binding.titleTxt.setText(video.title);
+        binding.channelNameTxt.setText(video.channelName);
+        binding.logoImgUrlTxt.setText(video.logoImageUrl);
+        binding.numberOfViewsTxt.setText(video.numberOfViews);
+        binding.uploadDateTxt.setText(video.uploadedDate);
+        binding.youtubeVideoIdTxt.setText(video.youtubeVideoId);
     }
 }

@@ -15,35 +15,28 @@ import retrofit2.Response;
 
 public class AddVideosActivity extends BaseAddEditVideosActivity {
 
-    private Button addBtn;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setTitle("Add Video");
-        setupViews();
         handleAdd();
         handleAddBtn();
 
     }
 
-    private void setupViews() {
-        addBtn = findViewById(R.id.add_btn);
-    }
-
     private void handleAdd() {
-        addBtn.setVisibility(View.VISIBLE);
+        binding.addBtn.setVisibility(View.VISIBLE);
     }
 
     private void handleAddBtn() {
-        addBtn.setOnClickListener(view -> {
-            String imageUrl = imageUrlTxt.getText().toString();
-            String title = titleTxt.getText().toString();
-            String logoImg = logoImgUrlTxt.getText().toString();
-            String channelName = channelLogoTxt.getText().toString();
-            String views = numberOfViewsTxt.getText().toString();
-            String uploadDate = uploadedDateTxt.getText().toString();
-            String youtubeVideoId = youtubeVideoIdTxt.getText().toString();
+        binding.addBtn.setOnClickListener(view -> {
+            String imageUrl = binding.imageUrlTxt.getText().toString();
+            String title = binding.titleTxt.getText().toString();
+            String logoImg = binding.logoImgUrlTxt.getText().toString();
+            String channelName = binding.imageUrlTxt.getText().toString();
+            String views = binding.imageUrlTxt.getText().toString();
+            String uploadDate = binding.imageUrlTxt.getText().toString();
+            String youtubeVideoId = binding.imageUrlTxt.getText().toString();
             Video videosItem = createVideo(imageUrl, title, logoImg, channelName, views, uploadDate, youtubeVideoId);
             saveVideo(videosItem);
         });
